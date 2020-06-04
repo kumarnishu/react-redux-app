@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import Posts from './components/Posts';
+import {PostForm,Posts} from './components/index';
+import {Provider} from 'react-redux';
+import store from './store';
+
 class App extends Component {
     constructor(props) {
         super(props);
@@ -7,7 +10,10 @@ class App extends Component {
     }
     render() {
         return (
-            <Posts/>
+            <Provider store={store}>
+                <PostForm/>
+                <Posts/>
+            </Provider>
         );
     }
 }
